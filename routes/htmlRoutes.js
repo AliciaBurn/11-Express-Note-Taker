@@ -1,21 +1,19 @@
-const path = require("path")
-const router = require("express").Router()
+var path = require("path");
 
+module.exports = function(app) {
 
-router.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"))
-});
+    app.get("/notes", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/notes.html"));
+    });
 
-router.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "/assets/js/index.js"))
-});
+    app.get("../assets/js/index.js", function(req,res){
+        res.sendFile(path.join(__dirname, "../assets/js/index.js"))
+    });
+    app.get("../assets/css/styles.css", function(req,res){
+        res.sendFile(path.join(__dirname, "../assets/css/styles.css"))
+    });
 
-router.get("*", function(req,res) {
-    res.sendFile(path.join(__dirname, "/assets/css/style.css"))
-});
-
-router.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/notes.html"))
-});
-
-module.exports = router
+    app.get("*", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+      });
+}

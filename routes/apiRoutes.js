@@ -30,9 +30,8 @@ module.exports = function (app) {
     app.delete("/api/notes/:id", function (req, res) {
         console.log("erase");
         var deleteData = req.params.id;
-        // console.log(deleteData) DOESNT KNOW WHAT IS deleteData
         console.log(deleteData)
-        for (i=0; i<noteData.length; i++) {
+        for (i = 0; i < noteData.length; i++) {
             // console.log(noteData[i])
             if (deleteData === noteData[i].title) {
                 noteData.splice(i, 1)
