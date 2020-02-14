@@ -57,8 +57,10 @@ var handleNoteSave = function() {
   };
 
   saveNote(newNote).then(function(data) {
-    getAndRenderNotes();
-    renderActiveNote();
+    setTimeout(() => {
+        getAndRenderNotes();
+        renderActiveNote();
+    }, 1000);
   });
 };
 
@@ -117,6 +119,17 @@ var renderNoteList = function(notes) {
     var $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
     );
+    $delBtn.on( "click", function() {
+        $.ajax({
+            url: `/api/notes/${notes[i-1].id}`,
+            type: "DELETE",
+            success: function() {
+                getAndRenderNotes();
+                renderActiveNote();
+                // location.reload();
+            }
+        })
+    })
 
     $li.append($span, $delBtn);
     noteListItems.push($li);
