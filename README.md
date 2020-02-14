@@ -1,15 +1,24 @@
 # 11-Express-Note-Taker
-Unit 11 Express Homework: Note Taker
+Created during Week 11 of UPenn Coding Bootcamp.
 
-Description
-An application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+## Overview
+This application that is used to write, save, and delete notes. It uses an express backend and save and retrieve note data from a JSON file.
 
+## Utilizing the App
+- User clicks "Get Started".
+- User will add desired text to "Note Title" and "Note Text".
+- When user is complete with writing their note, they click "Save" button in the right corner.
+- The users note is saved to their list.
+- If the user wants to add another note, they click on the pencil in the right corner. If the user wants to delete a note, they click on the trash can for the cooresponding note.
 
-User Story
-AS A user, I want to be able to write and save notes
-I WANT to be able to delete notes I've written before
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
-git
+## Tech used
+- HTML
+- CSS
+- Bootstrap
+- Javascript
+- Node.js
+- NPM modules
+- Express.js
 
-Business Context
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+## Contributers
+- Alicia Burn
