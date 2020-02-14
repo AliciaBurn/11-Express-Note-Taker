@@ -9,8 +9,8 @@ module.exports = function(app) {
     app.get("../public/assets/js/index.js", function(req,res){
         res.sendFile(path.join(__dirname, "../public/assets/js/index.js"))
     });
-    app.get("../public/assets/css/styles.css", function(req,res){
-        res.sendFile(path.join(__dirname, "../public/assets/css/styles.css"))
+    app.get("../public/assets/css/style.css", function(req,res){
+        res.sendFile(path.join(__dirname, "../public/assets/css/style.css"))
     });
 
     app.get("*", function(req, res) {
