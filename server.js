@@ -19,4 +19,4 @@ require("./routes/htmlRoutes")(app);
 
 app.listen(PORT, function() {
     console.log(`app is listen on ${PORT}`)
-})
+});
