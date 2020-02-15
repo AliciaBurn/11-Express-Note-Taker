@@ -7,8 +7,9 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 //Setup body parsing, static, routes
-app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.static("public"));
 // var apiRoutes = require("./routes/apiRoutes")(app);
 // var htmlRoutes = require("./routes/htmlRoutes")(app);
 
