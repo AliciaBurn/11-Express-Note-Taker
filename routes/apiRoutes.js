@@ -31,7 +31,7 @@ module.exports = function (app) {
     });
 
     app.delete("/api/notes/:id", async (req, res) => {
-        fs.readFile(path.join(__dirname, "../db.json"), (err, data) => {
+        fs.readFile(path.join("db.json"), (err, data) => {
             if (err) throw err;
             
             let notesArr = (JSON.parse(data));
@@ -44,7 +44,7 @@ module.exports = function (app) {
             // console.log(newNotesArr);
             let notesString = JSON.stringify(newNotesArr);
             // console.log(notesString);
-            fs.writeFileSync(path.join(__dirname, "../db.json"), notesString)
+            fs.writeFileSync(path.join("db.json"), notesString)
         })
         var deleteNote = req.params.id;
         // console.log(deleteNote)
@@ -56,7 +56,7 @@ module.exports = function (app) {
         };
         let parsedata = JSON.stringify(noteData)
         // deleted __dirname from path.join
-        fs.writeFile(path.join('../db.json'), parsedata, (err) => {
+        fs.writeFile(path.join('db.json'), parsedata, (err) => {
            if (err) throw err;
        })
         console.log(noteData)
